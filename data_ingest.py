@@ -66,11 +66,11 @@ def backtest(prices: pd.DataFrame, positions: pd.DataFrame, cost_per_trade: floa
 if __name__ == "__main__":
     # 1) Fetch data
     df = fetch_price_series(TICKERS, START, END, INTERVAL)
-    print(f"✅ Price DataFrame shape: {df.shape}")
+    print(f" Price DataFrame shape: {df.shape}")
 
     # 2) Compute signals
     zs = compute_basket_zscores(df)
-    print(f"✅ Z-score DataFrame shape: {zs.shape}")
+    print(f" Z-score DataFrame shape: {zs.shape}")
     pos = generate_positions(zs)
     strat_ret, strat_cum = backtest(df, pos)
 
